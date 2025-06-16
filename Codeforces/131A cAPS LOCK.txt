@@ -1,0 +1,21 @@
+- 131A cAPS LOCK | 15/12/2024
+
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main() {
+    string s; cin >> s;
+    int sSize = s.size();
+    int caps = 0;
+    for (int i = 1; i < sSize; i++) {
+        if (s[i] >= 65 && s[i] <= 90) caps++;
+    }
+    if (caps == sSize-1) {
+        if (s[0] >= 65 && s[0] <= 90) cout << char(tolower(s[0]));
+        else cout << char(toupper(s[0]));
+        for (int i = 1; i < sSize; i++) {
+            cout << char(tolower(s[i]));
+        }
+    }
+    else cout << s;
+}

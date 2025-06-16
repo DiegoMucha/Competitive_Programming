@@ -1,0 +1,23 @@
+- 268A Games | 15/12/2024
+
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main() {
+    int n; cin >> n;
+    vector<pair<int, int>> vec;
+    for (int i = 0; i < n; i++) {
+        int aux1, aux2;
+        cin >> aux1 >> aux2;
+        pair<int, int> p(aux1, aux2);
+        vec.push_back(p);
+    }
+    int gp = 0;
+    for (int i = 0; i < n; i++) {
+        for (int j = i+1; j < n; j++) {
+            if (vec[i].first == vec[j].second) gp++;
+            if (vec[i].second == vec[j].first) gp++;
+        }
+    }
+    cout << gp << endl;
+}

@@ -1,0 +1,27 @@
+- 427A Police Recruits | 01/01/2025
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int s, n;
+	cin >> s >> n;
+	vector<pair<int, int>> vec;
+	for (int i = 0; i < n; i++) {
+	    int x, y;
+	    cin >> x >> y;
+	    pair<int, int> p(x, y);
+	    vec.push_back(p);
+	}
+	sort(vec.begin(), vec.end());
+	bool baux = 1;
+	for (int i = 0; i < n; i++) {
+	    if (s <= vec[i].first) {
+	        baux = 0;
+	        break;
+	    }
+	    s += vec[i].second;
+	}
+	if (baux) cout << "YES";
+	else cout << "NO";
+}

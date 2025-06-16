@@ -1,0 +1,22 @@
+- 344A Magnets | 18/11/2024
+
+#include <bits/stdc++.h>
+using namespace std;
+
+
+int main() {
+    int n; cin >> n;
+    bitset<2> bs;
+    bool pf = 0;
+    int groups = 1;
+    cin >> bs;
+    pf = bs[1];
+    for (int i = 0; i < n-1; i++) {
+        cin >> bs;
+        if (bs[1] != pf) {
+            groups++;
+            pf = bs[1];
+        }
+    }
+    cout << groups;
+}

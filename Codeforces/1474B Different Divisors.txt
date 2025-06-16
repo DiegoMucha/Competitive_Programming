@@ -1,0 +1,39 @@
+- 1474B Different Divisors | 03/01/2025
+
+#include <bits/stdc++.h>
+using namespace std;
+#define int long long
+#define FAST_IO ios::sync_with_stdio(false); cin.tie(NULL);
+ 
+void eras_sieve(vector<int>& vec, int n) {
+    vector<bool> vaux(n+1, true);
+    vaux[0] = vaux[1] = false;
+    
+    for (int i = 2; i*i <= n; i++) {
+        if (vaux[i]) {
+            for (int j = i*i; j <= n; j+= i) {
+                vaux[j] = false;
+            }
+        }
+    }
+    for (int i = 2; i <= n; i++) {
+        if (vaux[i]) vec.push_back(i);
+    }
+}
+ 
+void solve(const vector<int>& vec) {
+    int d; cin >> d;
+    auto d2 = upper_bound(vec.begin(), vec.end(), d);
+    auto d3 = upper_bound(vec.begin(), vec.end(), (*d2 + d - 1));
+    int d4 = *d2 * *d3;
+    cout << d4 << "\n";
+}
+ 
+int32_t main() {
+    FAST_IO;
+	int t; cin >> t;
+	vector<int> vec;
+	eras_sieve(vec, 1000000);
+	while(t--) solve(vec);
+	return 0;
+}

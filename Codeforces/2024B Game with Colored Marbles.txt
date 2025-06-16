@@ -1,0 +1,31 @@
+- 2024B Game with Colored Marbles | 02/12/2024
+
+#include <bits/stdc++.h>
+using namespace std;
+ 
+void solve() {
+    int n; cin >> n;
+    unordered_map<int, int> umap;
+    int alicescore = 0;
+    for (int i = 0; i < n; i++) {
+        int aux; cin >> aux;
+        umap[aux]++;
+    }
+    int unos = 0;
+    for (auto it : umap) {
+        if (it.second == 1) {
+            unos++;
+        }
+        else alicescore++;
+    }
+    if (unos % 2 == 0) alicescore += (unos/2)*2;
+    else alicescore += (unos/2)*2 + 2;
+    cout << alicescore << "\n";
+}
+ 
+int main() {
+	int t; cin >> t;
+	while(t--) {
+	    solve();
+	}
+}

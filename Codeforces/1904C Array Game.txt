@@ -1,0 +1,50 @@
+- 1904C Array Game | 02/01/2025
+
+#include <bits/stdc++.h>
+using namespace std;
+#define int long long
+
+void solve() {
+    int n, k;
+    cin >> n >> k;
+    vector<int> vec;
+    int min_d = LLONG_MAX;
+    for (int i = 0; i < n; i++) {
+        int aux; cin >> aux;
+        if (aux < min_d) min_d = aux;
+        vec.push_back(aux);
+    }
+    if (k > 2) {
+        cout << 0 << "\n";
+        return;
+    }
+    sort(vec.begin(), vec.end());
+    if (k == 1) {
+        int d = LLONG_MAX;
+        for (int i = 0; i < n-1; i++) {
+            d = min(d, vec[i+1] - vec[i]);
+        }
+        cout << min(min_d, d);
+    }
+    else {
+        int min_n = min_d;
+        for (int i = 0; i < n; i++) {
+            for (int j = i+1; j < n; j++) {
+                int d = abs(vec[i] - vec[j]);
+                auto x = lower_bound(vec.begin(), vec.end(), d);
+                auto x1 = x;
+                x--;
+                min_n = min({min_n, abs(d - *x), abs(d - *x1), d});
+            }
+        }
+        cout << min_n;
+    }
+    cout << "\n";
+}
+
+int32_t main() {
+    int t; cin >> t;
+    while(t--) {
+        solve();
+    }
+}

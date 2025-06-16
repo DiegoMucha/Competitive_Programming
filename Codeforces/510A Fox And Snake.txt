@@ -1,0 +1,18 @@
+- 510A Fox And Snake | 15/12/2024
+
+#include <bits/stdc++.h>
+using namespace std;
+
+void solve() {
+    int n; cin >> n;
+    if (n % 2 == 0) cout << n/2 - 1;
+    else cout << n/2;
+    cout << "\n";
+}
+
+int main() {
+    int t; cin >> t;
+    while(t--) {
+        solve();
+    }
+}

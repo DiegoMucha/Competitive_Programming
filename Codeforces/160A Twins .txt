@@ -1,0 +1,28 @@
+- 160A Twins | 18/11/2024
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n; cin >> n;
+    vector<int> vec;
+    int aux;
+    int maxSum = 0;
+    for (int i = 0; i < n; i++) {
+        cin >> aux;
+        vec.push_back(aux);
+        maxSum += aux;
+    }
+    maxSum /= 2;
+    maxSum++;
+    sort(vec.begin(), vec.end());
+    reverse(vec.begin(), vec.end());
+    int auxsum = 0;
+    for (int i = 0; i < n; i++) {
+        auxsum += vec[i];
+        if (auxsum >= maxSum) {
+            cout << i + 1;
+            break;
+        }
+    }
+}

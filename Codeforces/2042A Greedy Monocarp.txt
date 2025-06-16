@@ -1,0 +1,28 @@
+- 2042A Greedy Monocarp | 02/12/2024
+
+#include <bits/stdc++.h>
+using namespace std;
+ 
+void solve() {
+    int n, k;
+    cin >> n >> k;
+    vector<int> vec;
+    for (int i = 0; i < n; i++) {
+        int aux; cin >> aux;
+        vec.push_back(aux);
+    }
+    sort(vec.begin(), vec.end());
+    reverse(vec.begin(), vec.end());
+    int suma = 0;
+    for (int i = 0; i < n; i++) {
+        if (suma + vec[i] > k) break;
+        suma += vec[i];
+    }
+    cout << k - suma << endl;
+}
+int main() {
+	int t; cin >> t;
+	while(t--) {
+	    solve();
+	}
+}

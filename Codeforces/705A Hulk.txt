@@ -1,0 +1,21 @@
+- 705A Hulk | 18/11/2024
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n; cin >> n;
+    bool aux = true;
+    for (int i = 0; i < n-1; i++) {
+        if (aux) {
+            cout << "I hate that ";
+            aux = false;
+        }
+        else {
+            cout << "I love that ";
+            aux = true;
+        }
+    }
+    if (aux) cout << "I hate it";
+    else cout << "I love it";
+}

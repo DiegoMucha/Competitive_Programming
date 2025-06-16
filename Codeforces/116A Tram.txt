@@ -1,0 +1,17 @@
+- 116A Tram | 05/11/2024
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n; cin >> n;
+    int mincapacity = 0;
+    int flow = 0;
+    while(n--) {
+        int a, b;
+        cin >> a >> b;
+        flow += b - a;
+        if (flow > mincapacity) mincapacity = flow;
+    }
+    cout << mincapacity << "\n";
+}

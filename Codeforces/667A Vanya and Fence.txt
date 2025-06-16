@@ -1,0 +1,16 @@
+- 667A Vanya and Fence | 05/11/2024
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n, h;
+    cin >> n >> h;
+    int width = 0;
+    for (int i = 0; i < n; i++) {
+        int aux; cin >> aux;
+        if (aux > h) width += 2;
+        else width += 1;
+    }
+    cout << width;
+}

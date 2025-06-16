@@ -1,0 +1,23 @@
+- 580A Kefa and First Steps | 11/12/2024
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int n; cin >> n;
+	vector<int> vec;
+	for (int i = 0; i < n; i++) {
+	    int a; cin >> a;
+	    vec.push_back(a);
+	}
+	int auxs = 1;
+	int maxs = 1;
+	for (int i = 0; i < n-1; i++) {
+	    if (vec[i] > vec[i+1]) {
+	        auxs = 1;
+	    }
+	    else auxs++;
+	    if (auxs > maxs) maxs = auxs;
+	}
+	cout << maxs;
+}

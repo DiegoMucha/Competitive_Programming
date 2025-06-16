@@ -1,0 +1,19 @@
+- 110A Nearly Lucky Number | 05/11/2024
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    string s;
+    cin >> s;
+    int sSize = s.size();
+    int lunum = 0;
+    for (int i = 0; i < sSize; i++) {
+        if (s[i] == '4' || s[i] == '7') {
+            lunum++;
+        }
+    }
+    if (lunum == 4 || lunum == 7) cout << "YES";
+    else cout << "NO";
+    cout << "\n";
+}

@@ -1,0 +1,14 @@
+- 318A Even Odds | 18/11/2024
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    long long n, k;
+    cin >> n >> k;
+    if (n % 2 != 0) n++;
+    if (k > n/2) {
+        cout << (k -n/2) * 2;
+    }
+    else cout << k*2 - 1;
+}

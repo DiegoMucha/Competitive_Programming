@@ -1,0 +1,18 @@
+- 136A Presents | 18/11/2024
+
+#include <bits/stdc++.h>
+using namespace std;
+
+
+int main() {
+    int n; cin >> n;
+    vector<int> arr(n);
+    int aux;
+    for (int i = 0; i < n; i++) {
+        cin >> aux;
+        arr[aux-1] = i+1;
+    }
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+}

@@ -1,0 +1,69 @@
+- 2047B Replace Character | 03/12/2024
+
+#include <bits/stdc++.h>
+using namespace std;
+ 
+void solve() {
+    int n; cin >> n;
+    string s; cin >> s;
+    unordered_map<char, int> umap;
+    for (int i = 0; i < n; i++) {
+        umap[s[i]]++;
+    }
+    int max = 0, min = 11;
+    char cmax = '1', cmin = '2';
+    for (auto it : umap) {
+        if (it.second >= max) {
+            cmax = it.first;
+            max = it.second;
+        }
+        if (it.second <= min) {
+            cmin = it.first;
+            min = it.second;
+        }
+    }
+    if (min == max) {
+        char dif = '9';
+        char og = '9';
+        for (int i = 0; i < n-1; i++) {
+            if (s[i] != s[i+1]) {
+                og = s[i];
+                dif = s[i+1];
+                break;
+            }
+        }
+        if (og == dif) {
+            cout << s;    
+        }
+        else {
+            bool baux = true;
+            for (int i = 0; i < n; i++) {
+                if (s[i] == og && baux) {
+                    cout << dif;
+                    baux = false;
+                }
+                else {
+                    cout << s[i];
+                }
+            }
+        }
+    }
+    else {
+        bool baux = true;
+        for (int i = 0; i < n; i++) {
+            if (s[i] == cmin && baux) {
+                cout << cmax;
+                baux = false;
+            }
+            else cout << s[i];
+        }
+    }
+    cout << "\n";
+}
+ 
+int main() {
+	int t; cin >> t;
+	while(t--) {
+	    solve();
+	}
+}

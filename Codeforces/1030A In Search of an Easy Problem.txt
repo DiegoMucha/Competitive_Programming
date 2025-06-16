@@ -1,0 +1,18 @@
+- 1030A In Search of an Easy Problem | 05/11/2024
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n; cin >> n;
+    bool eh = true;
+    while(n--) {
+        bool aux; cin >> aux;
+        if (aux == 1) {
+            eh = false;
+            break;
+        }
+    }
+    if (eh) cout << "EASY";
+    else cout << "HARD";
+}

@@ -1,0 +1,32 @@
+- 58A Chat Room | 05/11/2024
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    string s; cin >> s;
+    int sSize = s.size();
+    bool boolarr[5] = {0, 0, 0, 0, 0};
+    for (int i = 0; i < sSize; i++) {
+        if (s[i] == 'h' && !boolarr[0]) {
+            boolarr[0] = 1;
+        }
+        else if (s[i] == 'e' && boolarr[0]) {
+            boolarr[1] = 1;
+        }
+        else if (boolarr[1] && s[i] == 'l') {
+            boolarr[1] = 0;
+            boolarr[2] = 1;
+        }
+        else if (boolarr[2] && s[i] == 'l') {
+            boolarr[3] = 1;
+        }
+        else if (s[i] == 'o' && boolarr[3]) {
+            boolarr[4] = 1;
+            break;
+        }
+    }
+    if (boolarr[4]) cout << "YES";
+    else cout << "NO";
+    cout << "\n";
+} 

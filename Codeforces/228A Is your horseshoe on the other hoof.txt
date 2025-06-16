@@ -1,0 +1,14 @@
+- 228A Is your horseshoe on the other hoof? | 18/11/2024
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    unordered_set<int> uset;
+    int aux;
+    for (int i = 0; i < 4; i++) {
+        cin >> aux;
+        uset.insert(aux);
+    }
+    cout << 4 - uset.size();
+}

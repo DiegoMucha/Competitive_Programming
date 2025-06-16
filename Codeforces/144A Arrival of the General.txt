@@ -1,0 +1,24 @@
+- 144A Arrival of the General | 27/11/2024
+
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main() {
+	int n; cin >> n;
+	vector<int> vec;
+	int min = 999, max = 0, posmin, posmax;
+	for (int i = 0; i < n; i++) {
+	    int aux; cin >> aux;
+	    vec.push_back(aux);
+	    if (aux <= min) {
+	        min = aux;
+	        posmin = i;
+	    }
+	    if (aux > max) {
+	        max = aux;
+	        posmax = i;
+	    }
+	}
+	if (posmax > posmin) posmax--;
+	cout << (n - posmin - 1) + posmax;
+}

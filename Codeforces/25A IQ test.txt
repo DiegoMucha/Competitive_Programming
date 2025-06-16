@@ -1,0 +1,26 @@
+- 25A IQ test | 15/12/2024
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n; cin >> n;
+    int ev = 0, od = 0;
+    vector<int> vec;
+    for (int i = 0; i < n; i++) {
+        int aux; cin >> aux;
+        vec.push_back(aux);
+        if (aux % 2 == 0) ev++;
+        else od++;
+    }
+    for (int i = 0; i < n; i++) {
+        if (ev > 1 && vec[i] % 2 != 0) {
+            cout << i+1;
+            break;
+        }
+        else if (od > 1 && vec[i] % 2 == 0) {
+            cout << i+1;
+            break;
+        }
+    }
+}

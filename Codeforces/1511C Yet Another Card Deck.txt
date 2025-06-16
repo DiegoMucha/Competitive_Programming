@@ -1,0 +1,83 @@
+- 1511C Yet Another Card Deck | 03/01/2025
+
+#include <bits/stdc++.h>
+using namespace std;
+#define int long long
+#define FAST_IO ios::sync_with_stdio(false); cin.tie(NULL);
+
+int32_t main() {
+    FAST_IO;
+	int n; cin >> n;
+	set<int> s;
+	vector<int> vec(n);
+	for (int i = 0; i < n; i++) {
+	    int aux; cin >> aux;
+	     s.insert(aux);
+	}
+	bool baux = false;
+	int sSize = s.size();
+	auto it = s.begin();
+	auto it2 = s.begin();
+	for (int i = 0; i < sSize/2; i++) it2++;
+	if (sSize < 5) {
+	    if (sSize == 1) cout << 0 << "\n" << *it;
+	    else if (sSize == 2) {
+	        cout << 0 << "\n" << *it << " ";
+	        it++;
+	        cout << *it;
+	    }
+	    else if (sSize == 3) {
+	        it2 = s.begin();
+	        it2++;
+	        cout << 1 << "\n" << *it2 << " " << *it << " ";
+	        it2++;
+	        cout << *it2;
+	    }
+	    else {
+	        cout << 1 << "\n" << *it2 << " " << *it << " ";
+	        it2++;
+	        cout << *it2 << " ";
+	        it++;
+	        cout << *it;
+	        
+	    }
+	}
+	else {
+    	if (sSize % 2 != 0) {
+        	for (int i = 0; i < sSize; i++) {
+        	    if (!baux) {
+        	        vec[i] = *it2;
+        	        it2++;
+        	        baux = true;
+        	    }
+        	    else {
+        	        vec[i] = *it;
+        	        it++;
+        	        baux = false;
+        	    }
+        	}
+    	}
+    	else {
+    	    it2--;
+    	    for (int i = 0; i < sSize-1; i++) {
+        	    if (!baux) {
+        	        vec[i] = *it2;
+        	        it2++;
+        	        baux = true;
+        	    }
+        	    else {
+        	        vec[i] = *it;
+        	        it++;
+        	        baux = false;
+        	    }
+        	}
+        	it = s.end();
+        	it--;
+        	vec[sSize-1] = *it;
+    	}
+    	cout << sSize/2 + 1*(sSize % 2 != 0) - 1<< "\n";
+    	for (int i = 0; i < sSize; i++) {
+    	    cout << vec[i] << " ";
+    	}
+	}
+}

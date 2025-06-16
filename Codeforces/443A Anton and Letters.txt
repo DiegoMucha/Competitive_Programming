@@ -1,0 +1,17 @@
+- 443A Anton and Letters | 10/12/2024
+
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main() {
+	string s;
+	getline(cin, s);
+	int sSize = s.size();
+	unordered_set<char> uset;
+	for (int i = 1; i < sSize-1; i+= 3) {
+	    uset.insert(s[i]);
+	}
+	uset.insert(s[sSize-2]);
+	if (s.size() == 2) cout << 0;
+	else cout << uset.size();
+}
