@@ -15,35 +15,5 @@ void solve() {
 }
  
 int32_t main() {FIN;
-    int n; cin >> n;
-    vector<int> potions(n);
-    int max_eli = 0;
-    for (int i = 0; i < n; i++) {
-       cin >> potions[i];
-    } 
-    int health = 0;
-    int ans = 0;
-    priority_queue<int> pq;
-    for (int i = 0; i < n; i++) {
-        if (potions[i] >= 0) {
-            health += potions[i];
-            ans++;
-        }   
-        else {
-            if (potions[i] + health >= 0) {
-                health += potions[i];
-                ans++;
-                pq.push(abs(potions[i]));           
-            }
-            else {
-                if (pq.size() && pq.top() >= abs(potions[i])) {
-                    health += pq.top();
-                    health += potions[i];
-                    pq.pop();
-                    pq.push(abs(potions[i]));
-                }
-            }
-        }
-    }
-    cout << ans;
+    
 }
