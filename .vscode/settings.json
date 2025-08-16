@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "*.erd": "json",
+        "*.vuerd": "json",
+        "iostream": "cpp",
+        "iosfwd": "cpp",
+        "compare": "cpp",
+        "cstdint": "cpp",
+        "ostream": "cpp",
+        "format": "cpp"
+    }
+}

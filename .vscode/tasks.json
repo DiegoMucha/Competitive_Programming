@@ -1,0 +1,22 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compilar y ejecutar con timeout",
+            "type": "shell",
+            "command": "timeout",
+            "args": [
+                "5s",
+                "bash",
+                "-c",
+                "g++ main.cpp -o main && ./main < input.txt > output.txt"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [],
+            "detail": "Esta tarea compila y ejecuta el programa C++ con un timeout de 5 segundos, tomando el input de input.txt y escribiendo la salida en output.txt."
+        }
+    ]
+}
